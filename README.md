@@ -165,8 +165,74 @@ _(Assumption: The user has a project with 3 files, index.html, style.css and app
 
 ## Explore the role of pull requests in the GitHub workflow. How do they facilitate code review and collaboration, and what are the typical steps involved in creating and merging a pull request?
 
+<ins>Roles of Pull Requests</ins>
+- Pull requests provide a structured way for developers to propose changes to a codebase which are then reviewed by team members to ensure the code adheres to standard practices.
+- Pull requests help maintain a clean and organized Git history by ensuring changes are reviewed and approved before being integrated into the main branch.
+- Pull requests also allow multiple contributors to discuss changes, share feedback and iterate on the code which encourage collaboration.
+
+<ins>Code Review and Collaboration</ins>
+- Pull requests facilitate code review and collaboration by making changes visible to the entire team hence fostering transparency.
+- It also provides a platform for discussion and interaction with other team members.
+- Since they are created from features branches, they give users the ability to isolate changes until they are ready before merging onto the main branch.
+
+<ins>Steps Involved</ins> </br>
+_(Assumption: The user has already a feature branch, let's call it nav-feature, and has pushed the necessary changes to the github repository.)_
+- Navigate to the repo on GitHub and click the "New Pull Request" button.
+- Select the codebase branch (e.g. main or master) and the feature branch (in our case, it's nev-feature) containing your changes.
+- Provide a clear title and description for the pull request, explaining the purpose of the changes and any relevant information.
+- Once the changes have met the team member's standards and have been approved, the pull request gets merged with the main branch.
+- Finallly, you'll clean up by deleting the created branch.
+
 ## Discuss the concept of "forking" a repository on GitHub. How does forking differ from cloning, and what are some scenarios where forking would be particularly useful?
+
+- Forking a repo on GitHub allows you to create a personal copy of someone else's repo under your GitHub account. It is entirely independent of the original repo, allowing you to freely experiment by making changes and contributing without affecting the original owner's code.
+
+<ins>Difference Between Forking and Cloning</ins>
+- While forking create a copy of the repo in your GitHub account, cloning, on the other hand, creates a copy of the same repo but on your computer (locally).
+- The primary purpose of forking is so that one can contribute to an open-source project or experiment independently while the main purpose of cloning is so that one can work locally on a repo they have access to.
+- When one forks a repo, the repo switches ownership and now the copy is under your GitHub account, but when someone clones a GitHub repo, then the copy is still tied to the original owner.
+
+<ins>Scenaios When Forking if Useful</ins>
+- When one is contributing to an open-source project.
+- When one wants to experiment on a repo they don't own but with no affiliation with the original work.
+- When creating a personal version of your own.
 
 ## Examine the importance of issues and project boards on GitHub. How can they be used to track bugs, manage tasks, and improve project organization? Provide examples of how these tools can enhance collaborative efforts.
 
+<ins>Importance of Issues and Project Boards</ins>
+- Issues and project boards facilitate communication among team members by providing a platform for discussion, issuing feedbacks and updating each other on the project.
+- Since they can be viewed by anyone, they make the progress of a project visible to all stakeholders hence fostering accountability.
+- Speaking of accountability, issues serve as a centralized place to document tasks, bug fixes, feature requests and other work items while also providing a clear record of what needs to be done, who is responsible and the status of each task.
+
+<ins>Issues and Project Boards in Improving Project Organization</ins>
+- Issues are created for team members to report bugs, propose new features and document tasks which will help the contributors track bugs and add new features.
+- Issues can also help teams manage tasks by assigning issues to specific team members to clarify on member's responsibilities.
+- Issues also provide a comment section where users are expected to answer questions, discuss the solution and even provide updates on the issues raised.
+- Project boards, on the other hand, organize work by visually organizing pull requests and issues into columns.
+
+<ins>Examples of Enhancing Collaborative Effort</ins>
+- When a user reports a bug, the issue is well-documented and the issue is labled as `bug`. The issue is then assigned to a team member who will work on it and commit the changes. Once the changes are approved, the commits are merged to the main branch and the issue is closed and termed as resolved.
+- The same procedure is done when a feature is suggested. The feature is well-documented, added to a project under the `Backlog` column and later moved to the `ToDO` column. It is then assigned to a developer and the same process is continued.
+
 ## Reflect on common challenges and best practices associated with using GitHub for version control. What are some common pitfalls new users might encounter, and what strategies can be employed to overcome them and ensure smooth collaboration?
+
+<ins>Challenges While Using GitHub for Version Control</ins>
+- When multiple contributors modify the same feature or try fixing the same bug, they might encounter some merging conflict.
+- Other contributors might use unclear or incomplete commit messages causing confliction when merging the branches.
+- A contributor has several branches that have unclear names can cause confusion during merging.
+- Other contributors might ignore the `.gitignore` feature and instead upload unnecessary files.
+
+<ins>Best Practices</ins>
+- Choose an appropriate workflow that suits your team's needs and adopt it.
+- Integrate CI/CD pipelines to automatically run tests, linting, and builds on every pull request.
+- Conduct regular reviews and refactoring to maintain code quality.
+- Name branches, commits, and pull requests clearly to reflect their purpose.
+- Use issues and project boards to track tasks, bugs and check on feature requests.
+
+<ins>Pitfalls for New Users</ins>
+- Getting confused and mixing up the git commands such as not including a whitespace on a git command or finding it had distinguishing between commands such as `git rebase` and `git cherry-pick`.
+- To some without a computer background, mastering the git commands can be a challenge.
+
+<ins>Strategies to Deploy</ins>
+- Beginners are adviced to start with basic commands before going to complex commands such as `rebase` and `cherry-pick` and also practice on personal repos before contributing to a team project.
+- Instead of using CLI, they can opt for GUI instead such as `GitKraken` which is useful GUI to aid in Version Control.
