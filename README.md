@@ -63,9 +63,105 @@ _(Assumption: The user has a GitHub account and has successfully logged into the
 
 ## Compare and contrast the differences between a public repository and a private repository on GitHub. What are the advantages and disadvantages of each, particularly in the context of collaborative projects?
 
+<ins>Public Repository</ins>
+- A Public Repository is a repository that is accessible by anyone on the internet meaning anyone can view, clone, and fork the code, but only collaborators with write access can make changes to it.
+
+<ins>Advantages of Public Repos</ins>
+- Since they are accessible by anyone, they can attract contributors from all around the world, leading to a diverse range of ideas and improvements.
+- Public repos serve as a portfolio for developers, showcasing their skills and projects to potential employers or collaborators.
+- With their transparency nature, public repos are ideal for open-source projects where users and other developers can come and collaborate on your project.
+- Public repos are free to use, making them accessible to individuals and organizations with limited budgets and can also be used as inspirational ideas by other developers.
+
+<ins>Disadvantages of Public Repos</ins>
+- With public repos, there is a risk of exposing sensitive information, such as API keys or credentials when a user isn't confident in what they are pushing to their GitHub repos.
+- For a user who isn't familiar with licensing, there is a risk of their code being copied or misused without proper attribution.
+- There is limited control over who can view and fork the repos, which may not be suitable for proprietary projects.
+
+<ins>Private Repository</ins>
+- A Private Repository, on the other hand, is a repository that is only accessible to the owner and perhaps those with collaboration permission.
+
+<ins>Advantages of Private Repos</ins>
+- They are very ideal for projects that contain sensitive or proprietary information, as access is restricted to users with permission.
+- Since one chooses who can view and collaborate on a project, private repos have proven to be suitable for internal projects within organizations without disclosing any sensitive information.
+- Private repos facilitate secure collaboration within teams, which ensures that only team members with authorization can access and modify the code.
+
+<ins>Disadvantages of Private Repos</ins>
+- Since the repos are limited to authorized team members, it may restrict the diversity of contributions from other developers.
+
+<ins>Comparison Between Public and Private Repos</ins>
+- They both support Version Control (in this case, Git) which enables features like branching, pull requests, and issue tracking.
+- They are both designed to host user's code on a cloud-based storage system (GitHub).
+- Both of them allow multiple collaboration on the same projects with ease.
+
+<ins>Contrast Between Public and Private Repos</ins>
+- While public repos are accessible by anyone at any given time, private repos have restriction that allow only authorized members to view, fork or even pull the repo onto their computers.
+- Code that is published on a public repo is more likely to leak sensitive information such as API keys since they can be accessed by anyone. Private repos, on the other hand, are much secure hence ensuring confidentiality.
+- Anyone can contribute to a public repo while only authorized users can contribute to a private repo.
+- Public repos are ideal for open-source projects, personal projects and educational project while private repos are ideal for confidential, or internal projects.
+
 ## Detail the steps involved in making your first commit to a GitHub repository. What are commits, and how do they help in tracking changes and managing different versions of your project?
 
+- A commit is a snapshot of a project at a specific point of time.
+
+<ins>Steps Involved in Committing</ins> </br>
+_(Assumption: The user has a project with 3 files, index.html, style.css and app.js, on their local repository)_
+- To begin, the user would have to initialize git on that repository. This is done with the command:
+  ```
+  git init
+  ```
+- After initialization, the user will have to stage the files for committing. Which means preparing them to be pushes to GitHub. The command for adding all the files at once is:
+  ```
+  git add .
+  ```
+- But incase they only want to commit a single file such as the index.html, then the command would be:
+  ```
+  git add index.html
+  ```
+- After staging the files, the next step is committing. To commit a file, one needs the command below:
+  ```
+  git commit -m "My first commit."
+  ```
+- The `-m` flag allows one to add a message direct from the command prompt. In our case, the message is `My first commit.`
+- The final step in committing is pushing the code to your GitHub repo onto the main or master branch or any other branch created.
+  ```
+  git push -u origin main/master
+  ```
+- To confirm whether the files have been committed, a user can use the code below which should display green-colored file names (which suggest the commit was successfull) or red-colored file names (which suggests the commit was unsuccessful). 
+  ```
+  git status
+  ```
+
 ## How does branching work in Git, and why is it an important feature for collaborative development on GitHub? Discuss the process of creating, using, and merging branches in a typical workflow.
+
+<ins>How Branching Works</ins>
+- A branch, which is a parallel version of your repo, works by diverging from the main branch (just like how a tree has several branches) to allow a user or collaborators to work on a specific feature without interference with the main branch. These branches will then be merged into the main branch (usually the main or master branch) after they have been approved by the project's owners. With branching, each branch has its own commit history and changes made in one branch do not affect other branches until they are merged.
+
+<ins>Why Branching is Important for Collaboration</ins>
+- Since branching allows users to isolate their work, developers can work on new features, fix bugs or experiment without affecting the stable version of the project.
+- Branches allow for pull requests, enabling team members to review and discuss changes before merging the branches.
+- Branches allow for users to work on different features simultainiously without causing conflict on the main branch.
+- Branches also help manage different versions of a project such as production, staging and even development.
+
+<ins>Using Branches</ins>
+- You start by ensuring your local repo is up to date with the remote main branch (use either main or master):
+  ```
+  git checkout main
+  git pull origin main
+  ```
+- Then you create a new branch for your feature:
+  ```
+  git checkout -b new-feature
+  ```
+- Next, you'll make the necessary changes to your files or code, stage and comit your new changes:
+  ```
+  git add .
+  git commit -m "This is a new feature."
+  ```
+- You will then push the changes made in that branch to the main remote branch:
+  ```
+  git push origin new-feature
+  ```
+- Once the changes have been approved, you'll have to merge the branch with the main branch and delete the created branch.
 
 ## Explore the role of pull requests in the GitHub workflow. How do they facilitate code review and collaboration, and what are the typical steps involved in creating and merging a pull request?
 
